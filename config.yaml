@@ -64,6 +64,9 @@ contact: 'cms-dpoa-coordinator@cern.ch' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - introduction.md
+- 02-physics.md
+- 03-write-the-code.md
+- 04-put-it-all-together.md
 
 # Information for Learners
 learners: 
