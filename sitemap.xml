@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/02-physics.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/03-write-the-code.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/04-put-it-all-together.html</loc>
+  </url>
+  <url>
     <loc>https://cms-opendata-workshop.github.io/workbench-template-md/404.html</loc>
   </url>
   <url>
@@ -17,6 +26,15 @@
   </url>
   <url>
     <loc>https://cms-opendata-workshop.github.io/workbench-template-md/index.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/02-physics.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/03-write-the-code.html</loc>
+  </url>
+  <url>
+    <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/04-put-it-all-together.html</loc>
   </url>
   <url>
     <loc>https://cms-opendata-workshop.github.io/workbench-template-md/instructor/404.html</loc>

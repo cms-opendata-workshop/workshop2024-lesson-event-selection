@@ -252,6 +252,42 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-physics.html">2. The physics of our analysis</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-write-the-code.html">3. Write the code</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-put-it-all-together.html">4. Put it all together</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -388,7 +424,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -416,7 +452,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -482,6 +518,280 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</section></section><section id="aio-02-physics"><p>Content from <a href="02-physics.html">The physics of our analysis</a></p>
+<hr>
+<p>Last updated on 2024-07-27 |
+
+        <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/02-physics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What is the signal we are searching for?</li>
+<li>What are the backgrounds we need to concern ourselves with?</li>
+<li>How will we select the data?</li>
+<li>What is a “boosted jet”?</li>
+<li>What trigger(s) will we be using?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand what makes the signal “look” different from our
+backgrounds?</li>
+<li>How does this translate into how we record and measure particle
+interactions in CMS?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>We’re going to try to reproduce parts of a 2019 CMS study for
+resonant production of top-antitop pairs. The paper can be found <a href="https://arxiv.org/pdf/1810.05905" class="external-link">here</a> and hypothesizes a
+particle with specific properties referred to as <span class="math inline">\(Z'\)</span> which is produced in our
+proton-proton collisions and then decays to a top-antitop pair.</p>
+<p><span class="math inline">\(p p \rightarrow Z' \rightarrow
+t\overline{t}\)</span></p>
+<p>The original analysis searched for the <span class="math inline">\(Z'\)</span> assuming a range of masses. In the
+interests of time, we will conduct our search assuming a mass of 2000
+GeV/<span class="math inline">\(c^2\)</span> for the <span class="math inline">\(Z'\)</span>. The Monte Carlo for this process
+can be found <a href="https://opendata.cern.ch/record/75156" class="external-link">here</a>.
+It might be helpful <a href="https://cms-opendata-workshop.github.io/workshop2024-lesson-dataset-scouting/instructor/index.html" class="external-link">to
+review how to find data and how to understand these records</a>, if you
+have not done so prior to the workshop.</p>
+</section><section><h2 class="section-heading" id="selection-criteria">Selection criteria<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
+<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
+</h2>
+<hr class="half-width">
+<p>Words</p>
+<div class="section level3">
+<h3 id="physics-requirements">Physics requirements<a class="anchor" aria-label="anchor" href="#physics-requirements"></a>
+</h3>
+<p>Words</p>
+</div>
+<div class="section level3">
+<h3 id="trigger">Trigger<a class="anchor" aria-label="anchor" href="#trigger"></a>
+</h3>
+<p>Words</p>
+</div>
+<div class="section level3">
+<h3 id="luminosity-masking">Luminosity masking<a class="anchor" aria-label="anchor" href="#luminosity-masking"></a>
+</h3>
+<p>Words</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Use <code>.md</code> files for episodes when you want static
+content</li>
+<li>Use <code>.Rmd</code> files for episodes when you need to generate
+output</li>
+<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
+with your lesson</li>
+<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
+locally</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-03-write-the-code"><p>Content from <a href="03-write-the-code.html">Write the code</a></p>
+<hr>
+<p>Last updated on 2024-07-27 |
+
+        <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/03-write-the-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do you write a lesson using Markdown and
+<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain how to use markdown with The Carpentries Workbench</li>
+<li>Demonstrate how to include pieces of code, figures, and nested
+challenge blocks</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>Turn physics into code</p>
+</section><section><h2 class="section-heading" id="selection-criteria">Selection criteria<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
+<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
+</h2>
+<hr class="half-width">
+<p>Words</p>
+<div class="section level3">
+<h3 id="physics-requirements">Physics requirements<a class="anchor" aria-label="anchor" href="#physics-requirements"></a>
+</h3>
+<p>Words</p>
+</div>
+<div class="section level3">
+<h3 id="trigger">Trigger<a class="anchor" aria-label="anchor" href="#trigger"></a>
+</h3>
+<p>Words</p>
+</div>
+<div class="section level3">
+<h3 id="luminosity-masking">Luminosity masking<a class="anchor" aria-label="anchor" href="#luminosity-masking"></a>
+</h3>
+<p>Words</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Use <code>.md</code> files for episodes when you want static
+content</li>
+<li>Use <code>.Rmd</code> files for episodes when you need to generate
+output</li>
+<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
+with your lesson</li>
+<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
+locally</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-04-put-it-all-together"><p>Content from <a href="04-put-it-all-together.html">Put it all together</a></p>
+<hr>
+<p>Last updated on 2024-07-27 |
+
+        <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/04-put-it-all-together.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do you write a lesson using Markdown and
+<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain how to use markdown with The Carpentries Workbench</li>
+<li>Demonstrate how to include pieces of code, figures, and nested
+challenge blocks</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>Put it all together and make it easy to run.</p>
+</section><section><h2 class="section-heading" id="selection-criteria">Selection criteria<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
+<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
+</h2>
+<hr class="half-width">
+<p>Words</p>
+<div class="section level3">
+<h3 id="physics-requirements">Physics requirements<a class="anchor" aria-label="anchor" href="#physics-requirements"></a>
+</h3>
+<p>Words</p>
+</div>
+<div class="section level3">
+<h3 id="trigger">Trigger<a class="anchor" aria-label="anchor" href="#trigger"></a>
+</h3>
+<p>Words</p>
+</div>
+<div class="section level3">
+<h3 id="luminosity-masking">Luminosity masking<a class="anchor" aria-label="anchor" href="#luminosity-masking"></a>
+</h3>
+<p>Words</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Use <code>.md</code> files for episodes when you want static
+content</li>
+<li>Use <code>.Rmd</code> files for episodes when you need to generate
+output</li>
+<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
+with your lesson</li>
+<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
+locally</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
 </section></section>
 </div>
     </main>
@@ -530,8 +840,8 @@ any links that you are not going to use.
   "url": "https://cms-opendata-workshop.github.io/workbench-template-md/aio.html",
   "identifier": "https://cms-opendata-workshop.github.io/workbench-template-md/aio.html",
   "dateCreated": "2024-07-17",
-  "dateModified": "2024-07-23",
-  "datePublished": "2024-07-23"
+  "dateModified": "2024-07-27",
+  "datePublished": "2024-07-27"
 }
 
   </script><script>
