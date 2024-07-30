@@ -78,33 +78,109 @@ that we can refer to as we work through the lesson.
 :::::::::::::::::
 
 
-## Running through the selection steps
+## Running through the selection steps (in the Jupyter notebook)
 
 ### Preparing the environment
 
-We will be making extensive use of the `uproot` and `awkward` python libraries 
+We will be making extensive use of the `uproot` and `awkward` python libraries, the `pandas`
+data library, and a few other standard python libraries. The first part of the notebook 
+**Install and upgrade libraries** asks you to do just that, in order to ensure a consistent
+environment. 
+
+Depending on your connection, it should take 1-2 minutes to upload and import the libraries. 
+
+We've also prepared some helper code that makes it easier to work with the data in this lesson.
+You can see the code [here](https://github.com/cms-opendata-workshop/workshop2024-lesson-event-selection/blob/main/instructors/dpoa_workshop_utilities.py)
+but we will explain the functions and data objects in this notebook.
 
 ### Read in some files
 
+Run through the notebook for the **Download essential files** section. 
+
+::::::::: challenge
+
+## How many input NanoAOD files will we process?
+
+How many collision files are there? How many signal files are there? How many files are there combined in the background sample files? 
+
+::::: solution
+
+You will run
+```bash
+!wc -l FILE_LIST_*.txt
+```
+And get
+```output
+    68 FILE_LIST_Wjets.txt
+   152 FILE_LIST_collision.txt
+     4 FILE_LIST_signal_M2000.txt
+   146 FILE_LIST_tthadronic.txt
+    49 FILE_LIST_ttleptonic.txt
+   138 FILE_LIST_ttsemilep.txt
+   557 total
+```
+
+So there are 152 files in the `collision` dataset.
+
+4 files in our `signal_M2000` dataset.
+
+If we add up the background samples of `ttXXX` and `Wjets` we find there are 401 total files.
+
+:::::
+
+:::::::::::
+
+
+
 ### Apply the cuts
 
-Words
+Run through the next sections in the notebook to set up the cuts. 
+
+Check your understanding as you go. 
 
 ### Reconstruct the resonance candidate mass
 
-Words
+To reconstruct the $z'$ candidate mass in a computationally-efficient way, we are going to make
+use of the [Vector](https://vector.readthedocs.io/en/latest/) library, which works 
+very well with [awkward, as you can see in these examples](https://vector.readthedocs.io/en/latest/). 
+
+It allows for very simple code that will automatically calculate all combinations of particles
+when reconstructing some parent candidate. 
 
 ### Plot
 
-Words
+If you are able to run though **Use the cuts and calculate some values**, you should have
+been able to produce a basic plot. 
 
+::::::::: challenge
+
+## Plot the ttbar mass
+
+::::: solution
+
+You will run
+```python
+# Get the mass
+x = p4tot.mass
+
+# Plot it!
+plt.hist(ak.flatten(x), bins=40, range=(0,4000))
+plt.xlabel(f'$M_{{tt}}$ GeV/c$^2$', fontsize=18)
+plt.tight_layout()
+plt.savefig('ttbar_mass.png');
+```
+If your code works, you should get a plot similar to this one. 
+
+![Plot of the ttbar mass](fig/ttbar_mass.png){alt='Plot of the calculated ttbar mass for a single datafile'}
+
+:::::
+
+:::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Awkward arrays allow for a simplified syntax when making cuts to select the data
+- You need to be careful to distinguish between cuts on events and cuts on particles
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
