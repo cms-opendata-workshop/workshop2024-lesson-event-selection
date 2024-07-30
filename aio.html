@@ -121,9 +121,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<li><a class="dropdown-item" href="reference.html">Reference</a></li>
-          </ul>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
 </li>
       </ul>
 </div>
@@ -243,7 +241,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="02-physics.html">1. The physics of our analysis</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -255,7 +253,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02-physics.html">2. The physics of our analysis</a>
+        <a href="03-write-the-code.html">2. Write the code</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -267,19 +265,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-write-the-code.html">3. Write the code</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush5">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading5">
-        <a href="04-put-it-all-together.html">4. Put it all together</a>
+        <a href="04-put-it-all-together.html">3. Put it all together</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -312,7 +298,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li>
+
                     </ul>
 </div>
                 </div>
@@ -342,183 +328,7 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-introduction"><p>Content from <a href="introduction.html">Using Markdown</a></p>
-<hr>
-<p>Last updated on 2024-06-19 |
-
-        <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>How do you write a lesson using Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.txt" class="external-link">Pandoc-flavored Markdown</a>
-for static files and <a href="https://rmarkdown.rstudio.com/" class="external-link">R
-Markdown</a> for dynamic files that can render code into output. Please
-refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?<a class="anchor" aria-label="anchor" href="#challenge-1-can-you-do-it"></a>
-</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Output </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge-2-how-do-you-nest-solutions-within-challenge-blocks"></a>
-</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="figures">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
-<div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="math">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
-<div class="callout-content">
-<ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul>
-</div>
-</div>
-</div>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</section></section><section id="aio-02-physics"><p>Content from <a href="02-physics.html">The physics of our analysis</a></p>
+<section id="aio-02-physics"><p>Content from <a href="02-physics.html">The physics of our analysis</a></p>
 <hr>
 <p>Last updated on 2024-07-30 |
 
@@ -613,6 +423,26 @@ of the leptonically-decaying top quark.</li>
 <li>The fully-merged jets of the hadronically-decaying top quark.</li>
 </ul>
 <div class="section level3">
+<h3 id="background-processes">Background processes<a class="anchor" aria-label="anchor" href="#background-processes"></a>
+</h3>
+<p>We will concern ourselves with four (4) physics processes that might
+mimic our signal and which we identify as possible
+<em>backgrounds</em>.</p>
+<ul>
+<li>Production of a top-quark pair that decays
+<em>semileptonically</em>
+</li>
+<li>Production of a top-quark pair that decays
+<em>hadronically</em>
+</li>
+<li>Production of a top-quark pair that decays
+<em>leptonically</em>
+</li>
+<li>Production of <span class="math inline">\(W\)</span> bosons in
+association with jets and when the <span class="math inline">\(W\)</span> bosons decay leptonically</li>
+</ul>
+</div>
+<div class="section level3">
 <h3 id="physics-requirements">Physics requirements<a class="anchor" aria-label="anchor" href="#physics-requirements"></a>
 </h3>
 <ul>
@@ -680,7 +510,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-03-write-the-code"><p>Content from <a href="03-write-the-code.html">Write the code</a></p>
 <hr>
-<p>Last updated on 2024-07-27 |
+<p>Last updated on 2024-07-30 |
 
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/03-write-the-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -694,8 +524,12 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>How do you write the code that matches our physics selection
+criteria?</li>
+<li>Do we process collision data differently from our simulation
+data?</li>
+<li>How do we keep track of everything?</li>
+<li>What do we write out when we process a file?</li>
 </ul>
 </div>
 </div>
@@ -705,9 +539,11 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Learn to use <code>awkward</code> arrays to select subsets of the
+data</li>
+<li>Understand how to apply the luminosity mask</li>
+<li>Make a first-order plot of some of our variables of interest</li>
+<li>Process at least one file of both simulation and collision data</li>
 </ul>
 </div>
 </div>
@@ -718,24 +554,92 @@ challenge blocks</li>
 <a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>Turn physics into code</p>
-</section><section><h2 class="section-heading" id="selection-criteria">Selection criteria<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
-<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
+<p>There is a significant amount of code to run here and so we have
+written the majority of it in a Jupyter notebook. You can run most of
+the code on its own, but you should take the time to read and understand
+what is happening. In some places, you need to modify the code to get it
+to run.</p>
+<p>First, start your python docker container, following the lessons from
+<a href="https://cms-opendata-workshop.github.io/workshop2024-lesson-docker/instructor/03-docker-for-cms-opendata.html" class="external-link">the
+pre-exercises</a>. I am on a Linux machine, and I have already created
+the <code>cms_open_data_python</code> directory. So I will do the
+following</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">export</span> <span class="va">workpath</span><span class="op">=</span><span class="va">$PWD</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">mkdir</span> cms_open_data_python</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">chmod</span> <span class="at">-R</span> 777 cms_open_data_python</span></code></pre>
+</div>
+<p>Start the container with</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">--name</span> my_python <span class="at">-P</span> <span class="at">-p</span> 8888:8888 <span class="at">-v</span> <span class="va">${workpath}</span>/cms_open_data_python:/code gitlab-registry.cern.ch/cms-cloud/python-vnc:python3.10.5</span></code></pre>
+</div>
+<p>You will get a container prompt similar this:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>cmsusr@4fa5ac484d6f:/code$</code></pre>
+</div>
+<p>Before we start our Jupyter environment, let’s download the notebook
+we’ll be using with the following command.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-O</span> sdfsdfkjsdhfkdjshf</span></code></pre>
+</div>
+<p>Now I will start Jupyter lab as follows.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">jupyter-lab</span> <span class="at">--ip</span><span class="op">=</span>0.0.0.0 <span class="at">--no-browser</span></span></code></pre>
+</div>
+<p>and open the link that is printed out in the message.</p>
+<div id="how-to-follow-this-lesson" class="callout testimonial">
+<div class="callout-square">
+<i class="callout-icon" data-feather="heart"></i>
+</div>
+<div id="how-to-follow-this-lesson" class="callout-inner">
+<h3 class="callout-title">How to follow this lesson<a class="anchor" aria-label="anchor" href="#how-to-follow-this-lesson"></a>
+</h3>
+<div class="callout-content">
+<p>While some of the code will be explained on this web page, the
+majority of the code <em>and explanations of the code</em> are written
+out in the Jupyter notebook. Therefore, you should primarily following
+along there.</p>
+<p>I will use this webpage for the lesson to provide guideposts and
+checkpoints that we can refer to as we work through the lesson.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="running-through-the-selection-steps">Running through the selection steps<a class="anchor" aria-label="anchor" href="#running-through-the-selection-steps"></a>
+<a class="anchor" aria-label="anchor" href="#running-through-the-selection-steps"></a>
 </h2>
 <hr class="half-width">
-<p>Words</p>
 <div class="section level3">
-<h3 id="physics-requirements">Physics requirements<a class="anchor" aria-label="anchor" href="#physics-requirements"></a>
+<h3 id="preparing-the-environment">Preparing the environment<a class="anchor" aria-label="anchor" href="#preparing-the-environment"></a>
+</h3>
+<p>We will be making extensive use of the <code>uproot</code> and
+<code>awkward</code> python libraries</p>
+</div>
+<div class="section level3">
+<h3 id="read-in-some-files">Read in some files<a class="anchor" aria-label="anchor" href="#read-in-some-files"></a>
+</h3>
+</div>
+<div class="section level3">
+<h3 id="apply-the-cuts">Apply the cuts<a class="anchor" aria-label="anchor" href="#apply-the-cuts"></a>
 </h3>
 <p>Words</p>
 </div>
 <div class="section level3">
-<h3 id="trigger">Trigger<a class="anchor" aria-label="anchor" href="#trigger"></a>
+<h3 id="reconstruct-the-resonance-candidate-mass">Reconstruct the resonance candidate mass<a class="anchor" aria-label="anchor" href="#reconstruct-the-resonance-candidate-mass"></a>
 </h3>
 <p>Words</p>
 </div>
 <div class="section level3">
-<h3 id="luminosity-masking">Luminosity masking<a class="anchor" aria-label="anchor" href="#luminosity-masking"></a>
+<h3 id="plot">Plot<a class="anchor" aria-label="anchor" href="#plot"></a>
 </h3>
 <p>Words</p>
 <div id="keypoints1" class="callout keypoints">

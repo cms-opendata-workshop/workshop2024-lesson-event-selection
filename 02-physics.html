@@ -99,8 +99,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li>
-          </ul></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul></li>
       </ul></div>
     <!--
     <form class="d-flex col-md-2 search-form">
@@ -118,11 +117,11 @@
   Event selection
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 25%" class="percentage">
-    25%
+<aside class="col-md-12 lesson-progress"><div style="width: 0%" class="percentage">
+    0%
   </div>
   <div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 25%" aria-valuenow="25" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar incubator" role="progressbar" style="width: 0%" aria-valuenow="0" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -203,22 +202,13 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush2">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        2. The physics of our analysis
+        1. The physics of our analysis
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -233,19 +223,19 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush4">
+<div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading4">
-        <a href="03-write-the-code.html">3. Write the code</a>
+    <div class="accordion-header" id="flush-heading3">
+        <a href="03-write-the-code.html">2. Write the code</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush5">
+<div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading5">
-        <a href="04-put-it-all-together.html">4. Put it all together</a>
+    <div class="accordion-header" id="flush-heading4">
+        <a href="04-put-it-all-together.html">3. Put it all together</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -273,7 +263,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li>
+
                     </ul></div>
                 </div>
               </div>
@@ -293,14 +283,14 @@
         <!-- START: inst/pkgdown/templates/content-instructor.html dummypushtext -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="03-write-the-code.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="introduction.html" rel="prev">
+        <a class="chapter-link" href="index.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Using Markdown
+          Home
         </a>
         <a class="chapter-link float-end" href="03-write-the-code.html" rel="next">
           Next: Write the code...
@@ -398,6 +388,23 @@ the leptonically-decaying top quark.</li>
 of the leptonically-decaying top quark.</li>
 <li>The fully-merged jets of the hadronically-decaying top quark.</li>
 </ul><div class="section level3">
+<h3 id="background-processes">Background processes<a class="anchor" aria-label="anchor" href="#background-processes"></a></h3>
+<p>We will concern ourselves with four (4) physics processes that might
+mimic our signal and which we identify as possible
+<em>backgrounds</em>.</p>
+<ul><li>Production of a top-quark pair that decays
+<em>semileptonically</em>
+</li>
+<li>Production of a top-quark pair that decays
+<em>hadronically</em>
+</li>
+<li>Production of a top-quark pair that decays
+<em>leptonically</em>
+</li>
+<li>Production of <span class="math inline">\(W\)</span> bosons in
+association with jets and when the <span class="math inline">\(W\)</span> bosons decay leptonically</li>
+</ul></div>
+<div class="section level3">
 <h3 id="physics-requirements">Physics requirements<a class="anchor" aria-label="anchor" href="#physics-requirements"></a></h3>
 <ul><li>For the jet from the <span class="math inline">\(b\)</span> quark,
 we are going to make use of the <code>Jet</code> physics objects and
@@ -458,14 +465,14 @@ any links that you are not going to use.
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link" href="introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
+        <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="03-write-the-code.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link" href="introduction.html" rel="prev">
+        <a class="chapter-link" href="index.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Using Markdown
+          Home
         </a>
         <a class="chapter-link float-end" href="03-write-the-code.html" rel="next">
           Next: Write the code...
