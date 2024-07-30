@@ -309,7 +309,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>The physics of our analysis</h1>
-        <p>Last updated on 2024-07-27 |
+        <p>Last updated on 2024-07-30 |
 
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/02-physics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -353,33 +353,89 @@ interactions in CMS?</li>
 </div>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 <a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><p>We’re going to try to reproduce parts of a 2019 CMS study for
-resonant production of top-antitop pairs. The paper can be found <a href="https://arxiv.org/pdf/1810.05905" class="external-link">here</a> and hypothesizes a
+<hr class="half-width"><p>We’re going to reproduce parts of a 2019 CMS study for resonant
+production of top-antitop pairs. The paper can be found <a href="https://arxiv.org/pdf/1810.05905" class="external-link">here</a> and hypothesizes a
 particle with specific properties referred to as <span class="math inline">\(Z'\)</span> which is produced in our
 proton-proton collisions and then decays to a top-antitop pair.</p>
-<p><span class="math inline">\(p p \rightarrow Z' \rightarrow
-t\overline{t}\)</span></p>
-<p>The original analysis searched for the <span class="math inline">\(Z'\)</span> assuming a range of masses. In the
+<p><span class="math display">\[p p \rightarrow Z' \rightarrow
+t\overline{t}\]</span></p>
+<figure><img src="../fig/boosted_top_decay.png" alt="Two diagrams showing a top quark and antitop quark being produced where one decays through a leptonic process and the other decays through a hadronic process. The first image shows the hadronic decay in a non-boosted state and the second image shows the hadronic jets overlapping because of the boosted nature of the decay." class="figure mx-auto d-block"><div class="figcaption">Representation of the resolved (left) and
+boosted (right) regimes of a top-quark pair decay. From the <a href="https://www.semanticscholar.org/paper/Searches-for-top-antitop-quark-resonances-in-final-Missiroli/15209cea4bda62b56ca4e8f3bf856b8470b168e4" class="external-link">thesis</a>
+of M. Missiroli “Searches for top-antitop quark resonances in
+semileptonic final states with the CMS detector”</div>
+</figure><p>The original analysis searched for the <span class="math inline">\(Z'\)</span> assuming a range of masses. In the
 interests of time, we will conduct our search assuming a mass of 2000
 GeV/<span class="math inline">\(c^2\)</span> for the <span class="math inline">\(Z'\)</span>. The Monte Carlo for this process
 can be found <a href="https://opendata.cern.ch/record/75156" class="external-link">here</a>.
 It might be helpful <a href="https://cms-opendata-workshop.github.io/workshop2024-lesson-dataset-scouting/instructor/index.html" class="external-link">to
 review how to find data and how to understand these records</a>, if you
-have not done so prior to the workshop.</p>
+have not done so prior to the lesson.</p>
 </section><section><h2 class="section-heading" id="selection-criteria">Selection criteria<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
 <a class="anchor" aria-label="anchor" href="#selection-criteria"></a></h2>
-<hr class="half-width"><p>Words</p>
-<div class="section level3">
+<hr class="half-width"><p>A top quark decays almost 100% of the time to a <span class="math inline">\(b\)</span>-quark and a <span class="math inline">\(W\)</span> boson. The <span class="math inline">\(W\)</span> can decay <em>leptonically</em> (to a
+charged lepton and a neutrino) or <em>hadronically</em> (to a quark and
+an antiquark). All the quarks hadronize to form <em>jets</em>.</p>
+<p>We reconstruct the top quark pair such that one of the top quarks
+decays leptonically and the other decays hadronically. This is referred
+to as the <em>semileptonic</em> final state, as opposed to the
+<em>hadronic</em> final state, when both top quarks decay hadronically,
+or the <em>leptonic</em> final state, when both top quarks decay
+leptonically.</p>
+<p>We are assuming masses of the <span class="math inline">\(Z'\)</span> resonance in the TeV range and for
+this particular search, a mass of 2000 GeV/c<span class="math inline">\(^2\)</span> (2 TeV/c<span class="math inline">\(^2\)</span>). The mass of the top quark is 173
+GeV/c<span class="math inline">\(^2\)</span>, considerably less than the
+resonance for which we are searching. This means that a significant
+amount of the mass-energy of the resonance goes into the momentum of the
+top quarks, referred to as a <em>boosted</em> final state. In this
+boosted regime, the individual jets from the hadronically decaying top
+quark overlap and appear to merge together.</p>
+<p>We are going to attempt to calculate the invariant mass of the <span class="math inline">\(Z'\)</span> by reconstructing it’s 4-momentum
+from the sum of the 4-momenta of the top quark and antitop quark.
+Meaning we have four (4) physics “objects” in our final state.</p>
+<ul><li>The jet coming from the <span class="math inline">\(b\)</span>-quark
+of the leptonically-decaying top quark.</li>
+<li>The muon coming from the <span class="math inline">\(W\)</span> of
+the leptonically-decaying top quark.</li>
+<li>The neutrino coming from the <span class="math inline">\(W\)</span>
+of the leptonically-decaying top quark.</li>
+<li>The fully-merged jets of the hadronically-decaying top quark.</li>
+</ul><div class="section level3">
 <h3 id="physics-requirements">Physics requirements<a class="anchor" aria-label="anchor" href="#physics-requirements"></a></h3>
-<p>Words</p>
-</div>
+<ul><li>For the jet from the <span class="math inline">\(b\)</span> quark,
+we are going to make use of the <code>Jet</code> physics objects and
+require that the <span class="math inline">\(b\)</span>-tagging
+algorithm is above some threshold and that the jet passes some other
+combined quality checks.</li>
+<li>We will use the <code>Muon</code> physics object and require that it
+is a relatively high momentum muon with <span class="math inline">\(p_T
+&gt; 55\)</span> GeV/c and that is is recorded in a fiducial region of
+<span class="math inline">\(|\eta| &lt; 2.4\)</span>. We will also
+require that it is isolated from the other jets and that it passes some
+reconstruction quality thresholds.</li>
+<li>For the merged jets, we make use of the <code>FatJet</code> object.
+We will require a <span class="math inline">\(p_T&gt;500\)</span>
+GeV/c. While the original analysis tried to tag top quarks by looking at
+the subjettiness, we now have access to a more sophisticated tagger and
+so we will use this field and set a threshold to cleanly identify
+boosted top quark merged jets.</li>
+<li>The neutrino will be approximated using the missing energy in the
+transverse plane, MET, and we will use the <code>PuppiMET</code> object
+in our calculations. We’ll approximate the mass as 0.</li>
+</ul></div>
 <div class="section level3">
 <h3 id="trigger">Trigger<a class="anchor" aria-label="anchor" href="#trigger"></a></h3>
-<p>Words</p>
+<p>We will require that events pass the <code>HLT_TkMu50</code> trigger:
+the high-level trigger that requires a track consistent with a muon with
+<span class="math inline">\(p_T &gt; 50\)</span> GeV/c.</p>
 </div>
 <div class="section level3">
 <h3 id="luminosity-masking">Luminosity masking<a class="anchor" aria-label="anchor" href="#luminosity-masking"></a></h3>
-<p>Words</p>
+<p>In a <a href="https://cms-opendata-workshop.github.io/workshop2024-lesson-triggers-lumi/instructor/index.html" class="external-link">previous
+lesson</a>, you learned that the luminosity is calculated for “good”
+runs and so we need to make sure we only use those runs when we process
+collision data.</p>
+<p>We’ll be downloading and using <a href="https://opendata.cern.ch/record/14220/files/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt" class="external-link">this
+file</a> to match and select these good runs.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -388,14 +444,12 @@ have not done so prior to the workshop.</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<ul><li>We reconstruct the final state in the semileptonic decay of the
+top-quark pair</li>
+<li>The high mass assumption of the <span class="math inline">\(Z'\)</span> resonance leads to boosted final
+states</li>
+<li>We can make use of specific reconstruction algorithms to identify
+these final states</li>
 </ul></div>
 </div>
 </div>
@@ -462,7 +516,7 @@ any links that you are not going to use.
   "url": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/02-physics.html",
   "identifier": "https://cms-opendata-workshop.github.io/workbench-template-md/instructor/02-physics.html",
   "dateCreated": "2024-07-17",
-  "dateModified": "2024-07-27",
+  "dateModified": "2024-07-30",
   "datePublished": "2024-07-30"
 }
 
