@@ -52,7 +52,7 @@ cmsusr@4fa5ac484d6f:/code$
 Before we start our Jupyter environment, let's download the notebook we'll be using with the following command. 
 
 ```bash
-wget -O sdfsdfkjsdhfkdjshf
+wget https://raw.githubusercontent.com/cms-opendata-workshop/workshop2024-lesson-event-selection/main/instructors/data_selection_lesson.ipynb
 ```
 
 Now I will start Jupyter lab as follows. 
