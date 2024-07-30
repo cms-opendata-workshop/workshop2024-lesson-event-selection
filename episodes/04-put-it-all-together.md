@@ -1,49 +1,74 @@
 ---
-title: "Put it all together"
-teaching: 10
+title: "Putting it all together"
+teaching: 20
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using Markdown and `{sandpaper}`?
+- Do we process collision data differently from our simulation data?
+- How might we process multiple files? 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with The Carpentries Workbench
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Run over multiple collision or simulation files
+- Develop a sense of how long it takes to run over lots of data and how you might scale it up
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+# Introduction
 
-Put it all together and make it easy to run.
+We're going to continue to work with the same Jupyter notebook as before, picking up
+exactly where we left off with the **Processing data files** section. 
 
-## Selection criteria
+## Processing data
 
-Words
+Follow the notebook to develop a sense of how we apply the luminosity masking, following
+the concepts introduced in a [previous lesson](https://cms-opendata-workshop.github.io/workshop2024-lesson-triggers-lumi/instructor/index.html).
 
-### Physics requirements 
+## Processing multiple files
 
-Words
+The notebook has an example of how all of the previous cuts and data processing can be put into 
+one function that is easily called. 
 
-### Trigger
+You can return the data in any format you like, but we chose to use [pandas DataFrame objects](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html).
+They are widely used in many data science communities and can make simple data analysis much easier. 
 
-Words
+Make sure you get through the examples so that you have processed at least a few files from different
+datasets. 
 
-### Luminosity masking
+:::::::::::::::: testimonial
 
-Words
+## How much data should I run over?
 
+It can take 6-12 hours to run over all the data for this lesson, depending on your computer's speed and
+your internet connection. 
+
+We recommend that for this lesson you do *not* process all the data yourself. For future lessons, we will have processed all the
+data for you. 
+
+:::::::::::::::: 
+
+:::::::::::::::: challenge
+# Activity!
+
+Once you are able to run over multiple files, try to make some additional plots, either from the dataframes
+or from the earlier code where you are processing things step-by-step. 
+
+Try making some plots to compare the signal with one of the background samples. Are they different? Similar? 
+
+Are either of them similar to the collision data? 
+
+Add your plots to the Google document listed in the Mattermost channel for this lesson. 
+
+:::::::::::::::: 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- It it up to you how you want to save your reduced data and how to keep track of everything
+- There are many options, but think about how you might scale things up
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

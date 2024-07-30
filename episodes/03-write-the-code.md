@@ -7,7 +7,6 @@ exercises: 2
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - How do you write the code that matches our physics selection criteria?
-- Do we process collision data differently from our simulation data?
 - How do we keep track of everything?
 - What do we write out when we process a file?
 
