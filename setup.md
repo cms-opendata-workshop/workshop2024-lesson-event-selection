@@ -1,54 +1,29 @@
 ---
-title: Setup
+title: "Introduction and setup"
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
+:::::::::::::::::::::::::::::::::::::: questions 
 
-## Data Sets
+- How should I prepare for this lesson?
 
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Software Setup
+::::::::::::::::::::::::::::::::::::: objectives
 
-::::::::::::::::::::::::::::::::::::::: discussion
+- Make sure you can open the Docker container and run Jupyter lab
 
-### Details
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+## Introduction
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::
+We will be making heavy use of the [python docker container](https://cms-opendata-workshop.github.io/workshop2024-lesson-docker/instructor/03-docker-for-cms-opendata.html)
+that you learned about in the pre-exercises. You may have already used it in other lessons in this workshop. 
 
-:::::::::::::::: spoiler
+::::::::::::::::::::::::::::::::::::: keypoints 
 
-### Windows
+- Make sure you are familiar with Docker and the CMS Open Data containers
 
-Use PuTTY
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::
-
-:::::::::::::::: spoiler
-
-### MacOS
-
-Use Terminal.app
-
-::::::::::::::::::::::::
-
-
-:::::::::::::::: spoiler
-
-### Linux
-
-Use Terminal
-
-::::::::::::::::::::::::
+[r-markdown]: https://rmarkdown.rstudio.com/
 

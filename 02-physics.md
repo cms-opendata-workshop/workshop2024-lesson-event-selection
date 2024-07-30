@@ -1,7 +1,7 @@
 ---
 title: "The physics of our analysis"
 teaching: 10
-exercises: 2
+exercises: 1
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -39,6 +39,7 @@ It might be helpful
 [to review how to find data and how to understand these records](https://cms-opendata-workshop.github.io/workshop2024-lesson-dataset-scouting/instructor/index.html), 
 if you have not done so prior to the lesson. 
 
+
 ## Selection criteria
 
 A top quark decays almost 100% of the time to a $b$-quark and a $W$ boson. The $W$ can decay *leptonically* (to a charged lepton and a neutrino)
@@ -60,6 +61,15 @@ We are going to attempt to calculate the invariant mass of the $Z'$ by reconstru
 * The muon coming from the $W$ of the leptonically-decaying top quark.
 * The neutrino coming from the $W$ of the leptonically-decaying top quark.
 * The fully-merged jets of the hadronically-decaying top quark.
+
+### Background processes
+We will concern ourselves with four (4) physics processes that might mimic our signal and which we identify as possible *backgrounds*.
+
+* Production of a top-quark pair that decays *semileptonically*
+* Production of a top-quark pair that decays *hadronically*
+* Production of a top-quark pair that decays *leptonically*
+* Production of $W$ bosons in association with jets and when the $W$ bosons decay leptonically
+
 
 ### Physics requirements 
 
