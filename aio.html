@@ -265,7 +265,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="04-put-it-all-together.html">3. Put it all together</a>
+        <a href="04-put-it-all-together.html">3. Putting it all together</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -526,8 +526,6 @@ any links that you are not going to use.
 <ul>
 <li>How do you write the code that matches our physics selection
 criteria?</li>
-<li>Do we process collision data differently from our simulation
-data?</li>
 <li>How do we keep track of everything?</li>
 <li>What do we write out when we process a file?</li>
 </ul>
@@ -767,9 +765,9 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section><section id="aio-04-put-it-all-together"><p>Content from <a href="04-put-it-all-together.html">Put it all together</a></p>
+</section></section><section id="aio-04-put-it-all-together"><p>Content from <a href="04-put-it-all-together.html">Putting it all together</a></p>
 <hr>
-<p>Last updated on 2024-07-27 |
+<p>Last updated on 2024-07-30 |
 
         <a href="https://github.com/cms-opendata-workshop/workbench-template-md/edit/main/episodes/04-put-it-all-together.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -783,8 +781,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>Do we process collision data differently from our simulation
+data?</li>
+<li>How might we process multiple files?</li>
 </ul>
 </div>
 </div>
@@ -794,39 +793,74 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Run over multiple collision or simulation files</li>
+<li>Develop a sense of how long it takes to run over lots of data and
+how you might scale it up</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<div class="section level1">
+<h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h1>
+<p>We’re going to continue to work with the same Jupyter notebook as
+before, picking up exactly where we left off with the <strong>Processing
+data files</strong> section.</p>
+<div class="section level2">
+<h2 id="processing-data">Processing data<a class="anchor" aria-label="anchor" href="#processing-data"></a>
 </h2>
-<hr class="half-width">
-<p>Put it all together and make it easy to run.</p>
-</section><section><h2 class="section-heading" id="selection-criteria">Selection criteria<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
-<a class="anchor" aria-label="anchor" href="#selection-criteria"></a>
+<p>Follow the notebook to develop a sense of how we apply the luminosity
+masking, following the concepts introduced in a <a href="https://cms-opendata-workshop.github.io/workshop2024-lesson-triggers-lumi/instructor/index.html" class="external-link">previous
+lesson</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="processing-multiple-files">Processing multiple files<a class="anchor" aria-label="anchor" href="#processing-multiple-files"></a>
 </h2>
-<hr class="half-width">
-<p>Words</p>
-<div class="section level3">
-<h3 id="physics-requirements">Physics requirements<a class="anchor" aria-label="anchor" href="#physics-requirements"></a>
-</h3>
-<p>Words</p>
+<p>The notebook has an example of how all of the previous cuts and data
+processing can be put into one function that is easily called.</p>
+<p>You can return the data in any format you like, but we chose to use
+<a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html" class="external-link">pandas
+DataFrame objects</a>. They are widely used in many data science
+communities and can make simple data analysis much easier.</p>
+<p>Make sure you get through the examples so that you have processed at
+least a few files from different datasets.</p>
+<div id="how-much-data-should-i-run-over" class="callout testimonial">
+<div class="callout-square">
+<i class="callout-icon" data-feather="heart"></i>
 </div>
-<div class="section level3">
-<h3 id="trigger">Trigger<a class="anchor" aria-label="anchor" href="#trigger"></a>
+<div id="how-much-data-should-i-run-over" class="callout-inner">
+<h3 class="callout-title">How much data should I run over?<a class="anchor" aria-label="anchor" href="#how-much-data-should-i-run-over"></a>
 </h3>
-<p>Words</p>
+<div class="callout-content">
+<p>It can take 6-12 hours to run over all the data for this lesson,
+depending on your computer’s speed and your internet connection.</p>
+<p>We recommend that for this lesson you do <em>not</em> process all the
+data yourself. For future lessons, we will have processed all the data
+for you.</p>
 </div>
-<div class="section level3">
-<h3 id="luminosity-masking">Luminosity masking<a class="anchor" aria-label="anchor" href="#luminosity-masking"></a>
+</div>
+</div>
+<div id="activity" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="activity" class="callout-inner">
+<h3 class="callout-title">Activity!<a class="anchor" aria-label="anchor" href="#activity"></a>
 </h3>
-<p>Words</p>
+<div class="callout-content">
+<p>Once you are able to run over multiple files, try to make some
+additional plots, either from the dataframes or from the earlier code
+where you are processing things step-by-step.</p>
+<p>Try making some plots to compare the signal with one of the
+background samples. Are they different? Similar?</p>
+<p>Are either of them similar to the collision data?</p>
+<p>Add your plots to the Google document listed in the Mattermost
+channel for this lesson.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -836,14 +870,10 @@ challenge blocks</li>
 </h3>
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>It it up to you how you want to save your reduced data and how to
+keep track of everything</li>
+<li>There are many options, but think about how you might scale things
+up</li>
 </ul>
 </div>
 </div>
@@ -853,7 +883,7 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section>
+</div></section>
 </div>
     </main>
 </div>
